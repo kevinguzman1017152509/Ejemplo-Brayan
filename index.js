@@ -1,8 +1,15 @@
 const express= require('express');
 const app = express();
-const routes= require('./routes/routes');
+
+// definir todos los componentes, modulos app
+const routes= require('./routes/routes'); //crud
+const modulos = require('./routes/modulos');  //crud
+const colegios = require('./routes/colegios');  // crud
+
+
 //ajustes
 app.set('port',3000)
+
 
 
 // Middleware
