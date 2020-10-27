@@ -18,7 +18,15 @@ mysqlConnection.query('SELECT * FROM modulos',(err,rows,fields)=>{
 });// fin mostrar los datos de la tabla modulos
 router.get('/modulo/:id',(req,res)=>{
 const {id} = req.params;
-mysqlConnection.query()
+mysqlConnection.query('SELECT * FROM modulos WHERE id =?,[id]',
+(err,rows,fields)=>{
+
+if(!err){
+res.json(rows[0]); // traiga los otros campos
+}else{
+console.log(err);    
+}    
+})// fin conexion 
 
 });
 
